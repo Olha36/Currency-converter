@@ -2,7 +2,7 @@ import React from 'react';
 import dollar from './dollar.png';
 import './App.css';
 import Main from './Components/Main';
-import Form from './Components/Form';
+import Converter from './Components/Converter';
 
 
 
@@ -14,7 +14,7 @@ function App() {
         <img src={dollar} alt="dollar" />
       </header>
       <Main />
-      <Form />
+      <Converter />
     </div>
   );
 }
