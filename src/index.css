@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+img {
+  width: 16px;
+  height: 16px;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+svg {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 1px solid grey;
+  margin: 0 12px;
+  padding: 9px;
+  border-radius: 30%;
+}
+input {
+  height: 60px;
+}
+select {
+  height: 60px;
+  margin-left: 5px;
+  width: 177px;
+}
