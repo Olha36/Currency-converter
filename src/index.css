@@ -47,6 +47,7 @@ svg {
   position: relative;
   flex: 1 1 0%;
   padding: 10px;
+  width: 300px;
 }
 input {
   height: 60px;
@@ -67,15 +68,14 @@ input {
   top: calc(24% - 11.3333px);
 }
 .img-EU {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/330/330426.png');
-}
-.icon-default {
-  width: 20px;
-  height: 20px;
+  background-image: url(pics/EU.png);
+  width: 100px;
+  height: 100px;
+
 }
 select {
   height: 66px;
   margin-left: 5px;
-  width: 177px;
+  width: 60px;
   border: none;
 }
