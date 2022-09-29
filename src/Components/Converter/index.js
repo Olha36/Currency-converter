@@ -10,6 +10,14 @@ export default function Converter() {
           <label className='label-text'>
             <span>В мене є</span>
             <input type="text" value="100" />
+            <div>
+              <select className='select-left'>
+                <option value="USD">USD</option>
+                <span className='img-EU icon-default'></span>
+                <option value="EUR">EUR</option>
+                <option value="UAH">UAH</option>
+              </select>
+            </div>
           </label>
           <div>
             <svg id="dualArrows">

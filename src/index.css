@@ -29,6 +29,7 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid rgb(205, 215, 231);
 }
 .wrapper {
   display: flex;
@@ -39,16 +40,41 @@ svg {
   align-items: center;
 }
 .label-text {
-  border: 1px solid red;
+  border: 1px solid rgb(205, 215, 231);
   display: flex;
   flex-direction: column;
+  text-align: start;
+  position: relative;
+  flex: 1 1 0%;
 }
 input {
   height: 60px;
   border: none;
+  font-weight: 700;
+  font-size: 30px;
+}
+.select-left {
+  position: absolute;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  right: 16px;
+  background: rgb(255, 255, 255);
+  border: 0px;
+  outline: 0px;
+  z-index: 3;
+  top: calc(24% - 11.3333px);
+}
+.img-EU {
+  background-image: url(https://www.flaticon.com/free-icon/european-union_330426);
+}
+.icon-default {
+  width: 20px;
+  height: 20px;
 }
 select {
   height: 66px;
   margin-left: 5px;
   width: 177px;
+  border: none;
 }
