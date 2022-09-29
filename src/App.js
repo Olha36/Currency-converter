@@ -9,10 +9,14 @@ function App() {
   const [data, setData] = useState([]);
   const [currency] = useState(['USD', 'EUR', 'UAH'])
 
+  function filter(arr, newArr) {
+    return arr.filter(i => newArr.indexOf(i.cc) > -1)
+  }
+
   React.useEffect(() => {
     fetch(URL) 
     .then(response => response.json())
-    .then(data => setData(data, currency));
+    .then(data => setData(filter(data, currency)));
   }, [currency])
 
   return (
