@@ -13,7 +13,7 @@ export default function Left() {
               </select>
             </div>
           </label>
-          <div>
+          <div className='button'>
             <svg id="dualArrows">
               <path fillRule="evenodd" clipRule="evenodd" d="M15 3V0l4.5 4.5L15 9V6H0V3h15zM4.5 12h15v3h-15v3L0 13.5 4.5 9v3z"></path>
             </svg>

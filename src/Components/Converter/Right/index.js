@@ -7,7 +7,7 @@ export default function Right() {
             <span>Я отримаю</span>
             <input type="text" value="4150" />
             <div>
-              <select className='select-left'>
+              <select className='select-right'>
                 <option value="UAH">UAH</option>
                 <option value="USD">USD<span className='img-EU'></span></option>
                 <option value="EUR">EUR</option>

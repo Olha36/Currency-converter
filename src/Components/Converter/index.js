@@ -3,7 +3,7 @@ import Left from './Left'
 import Right from './Right'
 
 export default function Converter() {
-  return (
+    return (
     <>
       <div className='wrapper'>
         <Left />

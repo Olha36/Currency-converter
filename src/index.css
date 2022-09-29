@@ -55,7 +55,8 @@ input {
   font-weight: 700;
   font-size: 30px;
 }
-.select-left {
+.select-left,
+.select-right {
   position: absolute;
   display: flex;
   -webkit-box-align: center;
