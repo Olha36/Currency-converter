@@ -1,7 +1,7 @@
 import React from "react";
 const scaleNames = {
-    UAH: 'UAH',
-    USD: 'USD'
+  UAH: 'UAH',
+  USD: 'USD'
 };
 
 function toUAH(USD) {
@@ -37,19 +37,21 @@ function CurrencyInput (props) {
     //             onChange={handleChange} />
     //   </fieldset>
 
-    <div className='label-wrapper'>
+    <div className="wrapper">
+      <div className='label-wrapper'>
           <label className='label-text'>
-            <span>Я отримаю {scaleNames[scale]}:</span>
+            <span>Я отримаю:</span>
             <input type="text" value={currency} onChange={handleChange} />
             <div>
               <select className='select-right'>
-                <option value="UAH">UAH</option>
-                <option value="USD">USD<span className='img-EU'></span></option>
+                <option value="UAH">{scaleNames[scale]}</option>
+                <option value="USD">{scaleNames[scale]}<span className='img-EU'></span></option>
                 <option value="EUR">EUR</option>
               </select>
             </div>
           </label>
-        </div>
+      </div>
+    </div>
     );
 }
 
@@ -89,12 +91,15 @@ function Calculator() {
         )
   
     return (
-      <div>
+      <div className="container">
   
         {toggle ? left : right}
-            <br/>
-            <div onClick={handlerSwith}>Switch</div>
-            <br/>
+            {/* <div onClick={handlerSwith}>Switch</div> */}
+            <div className='button' onClick={handlerSwith}>
+             <svg id="dualArrows">
+               <path fillRule="evenodd" clipRule="evenodd" d="M15 3V0l4.5 4.5L15 9V6H0V3h15zM4.5 12h15v3h-15v3L0 13.5 4.5 9v3z"></path>
+             </svg>
+           </div>
         {toggle ? right: left}
       </div>
     );  

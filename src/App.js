@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import dollar from './dollar.png'
 import './App.css'
 import Main from './Components/Main'
-import Converter from './Components/Converter'
+// import Converter from './Components/Converter'
 import Calculator from './Components/Converterfunctional'
 let URL = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json'
 
@@ -27,7 +27,7 @@ function App() {
         <p>{[setData]}</p>
       </header>
       <Main />
-      <Converter />
+      {/* <Converter /> */}
       <Calculator />
       {console.log(data)}
     </div>

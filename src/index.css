@@ -32,7 +32,7 @@ svg {
   align-items: center;
   border: 1px solid rgb(205, 215, 231);
 }
-.wrapper {
+.container {
   display: flex;
   justify-content: center;
 }
@@ -80,4 +80,8 @@ select {
   margin-left: 5px;
   width: 60px;
   border: none;
+}
+.button {
+  align-items: center;
+  display: flex;
 }
