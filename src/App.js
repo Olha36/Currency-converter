@@ -2,9 +2,9 @@ import React, {useState} from 'react'
 import dollar from './dollar.png'
 import './App.css'
 import Main from './Components/Main'
-// import Converter from './Components/Converter'
 import Calculator from './Components/Converterfunctional'
 let URL = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json'
+
 
 function App() {
   const [data, setData] = useState([]);
@@ -24,12 +24,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={dollar} alt="dollar" />
-        <p>{[setData]}</p>
+        {/* <p>{[setData]}</p> */}
       </header>
       <Main />
       {/* <Converter /> */}
       <Calculator />
       {console.log(data)}
+      {console.log(data[0].rate)}
+      {console.log(currency[0].rate)}
     </div>
   )
 }

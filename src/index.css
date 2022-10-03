@@ -26,6 +26,11 @@ svg {
   padding: 9px;
   border-radius: 30%;
 }
+.courses {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 .flex {
   display: flex;
   justify-content: center;
@@ -35,10 +40,6 @@ svg {
 .container {
   display: flex;
   justify-content: center;
-}
-.label-wrapper {
-  display: flex;
-  align-items: center;
 }
 .label-text {
   border: 1px solid rgb(205, 215, 231);
@@ -68,12 +69,6 @@ input {
   outline: 0px;
   z-index: 3;
   top: calc(24% - 11.3333px);
-}
-.img-EU {
-  background-image: url(pics/EU.png);
-  width: 100px;
-  height: 100px;
-
 }
 select {
   height: 66px;
