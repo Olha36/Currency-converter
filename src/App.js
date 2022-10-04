@@ -1,11 +1,11 @@
 import React from 'react'
-// import dollar from './dollar.png'
 import './App.css'
-import Main from './Components/Main'
-// import Calculator from './Components/Converterfunctional'
+// import Main from './Components/Main'
+import Calculator from './Components/Converterfunctional'
 import Header from './Components/Header/index';
 // eslint-disable-next-line no-global-assign
 URL = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json'
+import { MainLeft, MainRight } from './Components/Main/index';
 
 function App() {
   const [data, setData] = React.useState([])
@@ -27,11 +27,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <img src={dollar} alt="dollar" /> */}
-        <Header value={data[0]?.rate}/>
-      </header>
-      <Main value={data[0]?.rate} />
+      <Header value={data[0]?.rate}/>
+      <p>Конвертер валют</p>
+      <div className='main'>
+        <MainLeft value={data[0]?.rate}/>
+        <MainRight value={data[1]?.rate}/>
+      </div>
+      <Calculator />
     </div>
   )
 }

@@ -1,11 +1,13 @@
 import React from "react"
 import PropTypes from 'prop-types'
+import dollar from './../../pics/dollar.png'
 
-export default function Header(props) {
+export default function Header({value }) {
+    
     return (
-        <div>
-            {/* <img src={dollar} alt="dollar" /> */}
-            <p>{props.value}</p>
+        <div className="header">
+            <img src={dollar} alt="dollar" />
+            <p>{value}</p>
         </div>
     )
 }
