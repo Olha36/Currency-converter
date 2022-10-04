@@ -31,6 +31,9 @@ svg {
   justify-content: center;
   margin-bottom: 20px;
 }
+course-item-title {
+  margin-right: 10px;
+}
 .flex {
   display: flex;
   justify-content: center;
