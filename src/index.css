@@ -4,7 +4,6 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
-
 form {
   display: flex;
   justify-content: center;
@@ -13,7 +12,10 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: darkgray;
+  background: linear-gradient(to bottom, rgb(47, 235, 231) 60%, rgba(255, 244, 89, 0.788) 40%);
+}
+.header p {
+  margin-right: 15px;
 }
 .container {
   border: 1px solid grey;
@@ -39,10 +41,27 @@ select {
   width: 60px;
   border: none;
 }
-input {
-  margin-left: 5px;
-}
 .button {
   align-items: center;
   display: flex;
+}
+@media screen and (max-width: 767px) {
+  form {
+    flex-direction: column;
+  }
+  .container {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .container p {
+    text-align: start;
+  }
+  #dualArrows {
+    margin: 15px auto;
+  }
+}
+@media screen and (max-width: 575px) {
+  input {
+    width: 50%;
+  }
 }

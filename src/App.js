@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import Header from './Components/Header/index'
+// import Header from './Components/Header/index'
 import { currency } from './Components/getOptions'
 import GetRate from './Components/GetRate'
 import getSelect from './Components/GetSelect'
@@ -11,11 +11,12 @@ const URL = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json'
 
 const toFixedNum = 2
 
+
 function App() {
   const [data, setData] = React.useState([])
-  const [select, setSelect] = React.useState([currency[0], currency[1]])
+  const [select, setSelect] = React.useState([currency[0], currency[1], currency[2]])
   const [[value_1, value_2], setValue] = React.useState([])
-  const [select_1, select_2] = select
+  const [select_1, select_2, select_3] = select
 
   React.useEffect(() => {
     fetch(URL)
@@ -69,9 +70,15 @@ function App() {
     })
   }
 
+  
   return (
     <div className="App">
-      <Header value={data[0]?.rate.toFixed(toFixedNum)} />
+      <div className='header'>
+        <p>{select_3} {data[1]?.rate.toFixed(toFixedNum)}</p>
+        <p>/</p>
+        <p>{select_2} {data[0]?.rate.toFixed(toFixedNum)}</p>
+      </div>
+      {/* <Header value={ data[0]?.rate.toFixed(toFixedNum)} /> */}
       <p>Конвертер валют</p>
       <div className="main">
         <form onSubmit={onSubmit}>
