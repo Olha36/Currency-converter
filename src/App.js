@@ -71,7 +71,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header value={data[0]?.rate} />
+      <Header value={data[0]?.rate.toFixed(toFixedNum)} />
       <p>Конвертер валют</p>
       <div className="main">
         <form onSubmit={onSubmit}>
