@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css'
-// import Header from './Components/Header/index'
 import { currency } from './Components/getOptions'
 import GetRate from './Components/GetRate'
 import getSelect from './Components/GetSelect'
@@ -78,7 +77,6 @@ function App() {
         <p>/</p>
         <p>{select_2} {data[0]?.rate.toFixed(toFixedNum)}</p>
       </div>
-      {/* <Header value={ data[0]?.rate.toFixed(toFixedNum)} /> */}
       <p>Конвертер валют</p>
       <div className="main">
         <form onSubmit={onSubmit}>
