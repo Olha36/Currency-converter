@@ -3,13 +3,11 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+form {
+  display: flex;
+  justify-content: center;
 }
 .header {
   display: flex;
@@ -17,7 +15,10 @@ code {
   justify-content: center;
   background-color: darkgray;
 }
-
+.container {
+  border: 1px solid grey;
+  padding: 10px;
+}
 img {
   width: 25px;
   height: 25px;
@@ -32,56 +33,6 @@ svg {
   padding: 9px;
   border-radius: 30%;
 }
-.courses {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-.course-item-title {
-  margin-right: 10px;
-  font-weight: bold;
-}
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgb(205, 215, 231);
-}
-.container {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
-}
-.label-text {
-  border: 1px solid rgb(205, 215, 231);
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  position: relative;
-  flex: 1 1 0%;
-  padding: 10px;
-  width: 300px;
-}
-input {
-  height: 60px;
-  border: none;
-  font-weight: 700;
-  font-size: 30px;
-}
-.select-left,
-.select-right {
-  position: absolute;
-  display: flex;
-  height: 50px;
-  -webkit-box-align: center;
-  align-items: center;
-  right: 16px;
-  background: rgb(255, 255, 255);
-  border: 0px;
-  outline: 0px;
-  z-index: 3;
-  top: calc(24% - 0.3332999999999995px);
-}
 select {
   height: 66px;
   margin-left: 5px;
@@ -91,8 +42,4 @@ select {
 .button {
   align-items: center;
   display: flex;
-}
-.main {
-  display: flex;
-  justify-content: center;
 }

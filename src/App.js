@@ -1,65 +1,25 @@
 import React from 'react'
 import './App.css'
-import Header from './Components/Header/index';
-import getOptions from './Components/getOptions';
-import { currency } from './Components/getOptions';
-import GetRate from './Components/GetRate';
-
+import Header from './Components/Header/index'
+import { currency } from './Components/getOptions'
+import GetRate from './Components/GetRate'
+import getSelect from './Components/GetSelect'
+import getInput from './Components/getInput'
+import filter from './Components/filter'
 
 const URL = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json'
 
+const toFixedNum = 2
 
-
-
-function getSelect(value, onSelectChange, index, fromValue) {
-  const onChangeHandler = (e) => {
-    onSelectChange(fromValue, e.target.value, index)
-  }
-
-  return (
-    <>
-      <select value={value} onChange={onChangeHandler}>
-        {getOptions()}
-      </select>
-    </>
-  )
-}
-const onSubmit = (e) => {
-  e.preventDefault();
-}  
-
-const onSelect = (fromValue, newValue, index)=> {
-  setValue(state => {
-    const rate = GetRate(newValue,fromValue, data)
-    const secondEl = +!index
-    const newData = [...state]
-    newData[secondEl] = (newData[index]*rate).toFixed(toFixedNum)
-    console.log(fromValue, newValue, secondEl,  newData)
-    return newData
-  })   
-  setSelect(state => {
-    const newData = [...state]
-    newData[index] = newValue
-    return newData
-  })
-}
-
-function filter(arr, newArr) {
-  return arr.filter((i) => newArr.indexOf(i.cc) > -1)
-}
 function App() {
   const [data, setData] = React.useState([])
   const [select, setSelect] = React.useState([currency[0], currency[1]])
-  const [[value1, value2], setValue] = React.useState([])
+  const [[value_1, value_2], setValue] = React.useState([])
   const [select_1, select_2] = select
-
-  function filter(arr, newArr) {
-    return arr.filter((i) => newArr.indexOf(i.cc) > -1)
-  }
 
   React.useEffect(() => {
     fetch(URL)
-      .then((response) => {        
+      .then((response) => {
         return response.json()
       })
       .then((data) => {
@@ -67,17 +27,60 @@ function App() {
       })
   }, [])
 
+  const onSubmit = (e) => {
+    e.preventDefault()
+  }
+
+  const onSelect = (fromValue, newValue, index) => {
+    setValue((state) => {
+      const rate = GetRate(newValue, fromValue, data)
+      const secondEl = +!index
+      const newData = [...state]
+      newData[secondEl] = (newData[index] * rate).toFixed(toFixedNum)
+      console.log(fromValue, newValue, secondEl, newData)
+      return newData
+    })
+    setSelect((state) => {
+      const newData = [...state]
+      newData[index] = newValue
+      return newData
+    })
+  }
+
+  const onButtonClick = () => {
+    setSelect((state) => {
+      const x = [...state].reverse()
+      return x
+    })
+    setValue((state) => {
+      const x = [...state].reverse()
+      return x
+    })
+  }
+
+  const onInput = (value, curFrom, curTo, index) => {
+    setValue((state) => {
+      const rate = GetRate(curFrom, curTo, data)
+      const secondEl = +!index
+      const newData = [...state]
+      newData[index] = value
+      newData[secondEl] = (value * rate).toFixed(toFixedNum)
+      return newData
+    })
+  }
+
   return (
     <div className="App">
-      <Header value={data[0]?.rate}/>
+      <Header value={data[0]?.rate} />
       <p>Конвертер валют</p>
-      <div className='main'>
-        <form>
-          <div>
+      <div className="main">
+        <form onSubmit={onSubmit}>
+          <div className='container'>
             <p>В мене є</p>
-            {getSelect}
+            {getSelect(select_1, onSelect, 0, select_2)}
+            {getInput(value_1, onInput, select_1, select_2, 0)}
           </div>
-          <div className="button" onClick={onSubmit}>
+          <div className="button" onClick={onButtonClick}>
             <svg id="dualArrows">
               <path
                 fillRule="evenodd"
@@ -86,9 +89,13 @@ function App() {
               ></path>
             </svg>
           </div>
+          <div className='container'>
+            <p>Я отримаю</p>
+            {getSelect(select_2, onSelect, 1, select_1)}
+            {getInput(value_2, onInput, select_2, select_1, 1)}
+          </div>
         </form>
       </div>
-      <Calculator />
     </div>
   )
 }
