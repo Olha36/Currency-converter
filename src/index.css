@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
 form {
@@ -12,14 +12,16 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, rgb(47, 235, 231) 60%, rgba(255, 244, 89, 0.788) 40%);
+  background-color: #007bff;
+  color: white;
 }
 .header p {
   margin-right: 15px;
 }
 .container {
   border: 1px solid grey;
-  padding: 10px;
+  padding: 50px;
+  box-shadow: 10px 9px 16px #757575;
 }
 img {
   width: 25px;
@@ -40,6 +42,10 @@ select {
   margin-left: 5px;
   width: 60px;
   border: none;
+}
+input {
+  padding: 10px;
+  border-radius: 20px;
 }
 .button {
   align-items: center;

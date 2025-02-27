@@ -77,7 +77,7 @@ function App() {
         <p>/</p>
         <p>{select_2} {data[0]?.rate.toFixed(toFixedNum)}</p>
       </div>
-      <p>Конвертер валют</p>
+      <h1>Конвертер валют</h1>
       <div className="main">
         <form onSubmit={onSubmit}>
           <div className='container'>
